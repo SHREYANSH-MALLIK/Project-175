@@ -19,7 +19,7 @@ AFRAME.registerComponent("createmodels", {
 
     var scene = document.querySelector("a-scene");
 
-    var marker = document.createmodel("a-marker");
+    var marker = document.createElement("a-marker");
 
     marker.setAttribute("id", `marker-${modelName}`);
     marker.setAttribute("type", "barcode");
@@ -29,7 +29,7 @@ AFRAME.registerComponent("createmodels", {
     scene.appendChild(marker);
 
     if (barcodeValue === 0) {
-      var modelEl = document.createmodel("a-entity");
+      var modelEl = document.createElement("a-entity");
       modelEl.setAttribute("id", `${modelName}`);
       modelEl.setAttribute("geometry", {
         primitive: "box",
@@ -43,7 +43,7 @@ AFRAME.registerComponent("createmodels", {
       });
       marker.appendChild(modelEl);
     } else {
-      var modelEl = document.createmodel("a-entity");
+      var modelEl = document.createElement("a-entity");
       modelEl.setAttribute("id", `${modelName}`);
       modelEl.setAttribute("gltf-model", `url(${modelUrl})`);
       modelEl.setAttribute("scale", model.scale);
